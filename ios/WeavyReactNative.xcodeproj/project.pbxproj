@@ -11,8 +11,8 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		34A2EDB437A605FB47130A2C /* libPods-WeavyReactNative-WeavyReactNativeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139147A77A27A2C9A9B3EE0C /* libPods-WeavyReactNative-WeavyReactNativeTests.a */; };
-		59D61EBF147AFD6CBDE9DCE0 /* libPods-WeavyReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22ED697BB98BA5E8F7C93D00 /* libPods-WeavyReactNative.a */; };
+		5AB2838A4A0DACA58F89EF52 /* libPods-WeavyReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 756F9F2C22560486A3D19BDE /* libPods-WeavyReactNative.a */; };
+		7DD7F09EB8611BD801CCAA4A /* libPods-WeavyReactNative-WeavyReactNativeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B36F1F7F3BC8F7B08197144 /* libPods-WeavyReactNative-WeavyReactNativeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -30,19 +30,19 @@
 		00E356EE1AD99517003FC87E /* WeavyReactNativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeavyReactNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* WeavyReactNativeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeavyReactNativeTests.m; sourceTree = "<group>"; };
-		02FFDE17196DC8BDEFF11CFC /* Pods-WeavyReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeavyReactNative.debug.xcconfig"; path = "Target Support Files/Pods-WeavyReactNative/Pods-WeavyReactNative.debug.xcconfig"; sourceTree = "<group>"; };
-		139147A77A27A2C9A9B3EE0C /* libPods-WeavyReactNative-WeavyReactNativeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeavyReactNative-WeavyReactNativeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* WeavyReactNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeavyReactNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = WeavyReactNative/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = WeavyReactNative/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = WeavyReactNative/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = WeavyReactNative/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WeavyReactNative/main.m; sourceTree = "<group>"; };
-		22C4A0B1E770863E6B30AF7A /* Pods-WeavyReactNative-WeavyReactNativeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeavyReactNative-WeavyReactNativeTests.release.xcconfig"; path = "Target Support Files/Pods-WeavyReactNative-WeavyReactNativeTests/Pods-WeavyReactNative-WeavyReactNativeTests.release.xcconfig"; sourceTree = "<group>"; };
-		22ED697BB98BA5E8F7C93D00 /* libPods-WeavyReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeavyReactNative.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F65D0CBF93A26241386DA7B /* Pods-WeavyReactNative-WeavyReactNativeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeavyReactNative-WeavyReactNativeTests.debug.xcconfig"; path = "Target Support Files/Pods-WeavyReactNative-WeavyReactNativeTests/Pods-WeavyReactNative-WeavyReactNativeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		451A3D15135BAAA905183D05 /* Pods-WeavyReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeavyReactNative.release.xcconfig"; path = "Target Support Files/Pods-WeavyReactNative/Pods-WeavyReactNative.release.xcconfig"; sourceTree = "<group>"; };
+		1B36F1F7F3BC8F7B08197144 /* libPods-WeavyReactNative-WeavyReactNativeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeavyReactNative-WeavyReactNativeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EF8CD18EB1DD67DDF6F4553 /* Pods-WeavyReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeavyReactNative.release.xcconfig"; path = "Target Support Files/Pods-WeavyReactNative/Pods-WeavyReactNative.release.xcconfig"; sourceTree = "<group>"; };
+		756F9F2C22560486A3D19BDE /* libPods-WeavyReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeavyReactNative.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = WeavyReactNative/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A49F1EC4386E478D45D43925 /* Pods-WeavyReactNative-WeavyReactNativeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeavyReactNative-WeavyReactNativeTests.debug.xcconfig"; path = "Target Support Files/Pods-WeavyReactNative-WeavyReactNativeTests/Pods-WeavyReactNative-WeavyReactNativeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9A43CF5FCE1CA9242A1D523 /* Pods-WeavyReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeavyReactNative.debug.xcconfig"; path = "Target Support Files/Pods-WeavyReactNative/Pods-WeavyReactNative.debug.xcconfig"; sourceTree = "<group>"; };
+		BFDB29BBA7EF067552EC6919 /* Pods-WeavyReactNative-WeavyReactNativeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeavyReactNative-WeavyReactNativeTests.release.xcconfig"; path = "Target Support Files/Pods-WeavyReactNative-WeavyReactNativeTests/Pods-WeavyReactNative-WeavyReactNativeTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34A2EDB437A605FB47130A2C /* libPods-WeavyReactNative-WeavyReactNativeTests.a in Frameworks */,
+				7DD7F09EB8611BD801CCAA4A /* libPods-WeavyReactNative-WeavyReactNativeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59D61EBF147AFD6CBDE9DCE0 /* libPods-WeavyReactNative.a in Frameworks */,
+				5AB2838A4A0DACA58F89EF52 /* libPods-WeavyReactNative.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,10 +100,22 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				22ED697BB98BA5E8F7C93D00 /* libPods-WeavyReactNative.a */,
-				139147A77A27A2C9A9B3EE0C /* libPods-WeavyReactNative-WeavyReactNativeTests.a */,
+				756F9F2C22560486A3D19BDE /* libPods-WeavyReactNative.a */,
+				1B36F1F7F3BC8F7B08197144 /* libPods-WeavyReactNative-WeavyReactNativeTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51061254C550368C0919B658 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B9A43CF5FCE1CA9242A1D523 /* Pods-WeavyReactNative.debug.xcconfig */,
+				1EF8CD18EB1DD67DDF6F4553 /* Pods-WeavyReactNative.release.xcconfig */,
+				A49F1EC4386E478D45D43925 /* Pods-WeavyReactNative-WeavyReactNativeTests.debug.xcconfig */,
+				BFDB29BBA7EF067552EC6919 /* Pods-WeavyReactNative-WeavyReactNativeTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -121,7 +133,7 @@
 				00E356EF1AD99517003FC87E /* WeavyReactNativeTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				CDE60EE21FF229B66F1EAA02 /* Pods */,
+				51061254C550368C0919B658 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,18 +149,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CDE60EE21FF229B66F1EAA02 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				02FFDE17196DC8BDEFF11CFC /* Pods-WeavyReactNative.debug.xcconfig */,
-				451A3D15135BAAA905183D05 /* Pods-WeavyReactNative.release.xcconfig */,
-				2F65D0CBF93A26241386DA7B /* Pods-WeavyReactNative-WeavyReactNativeTests.debug.xcconfig */,
-				22C4A0B1E770863E6B30AF7A /* Pods-WeavyReactNative-WeavyReactNativeTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,11 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "WeavyReactNativeTests" */;
 			buildPhases = (
-				328733DF8E4E66192AE2EEB7 /* [CP] Check Pods Manifest.lock */,
+				C228FD1E2C7950EDE6D1B6A6 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				106FAFF5BCE46B6284619940 /* [CP] Copy Pods Resources */,
+				C92BC57B9CD9ACCE6508EF45 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,13 +176,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "WeavyReactNative" */;
 			buildPhases = (
-				6E90E046BF66BE1BED41C5F0 /* [CP] Check Pods Manifest.lock */,
+				99B30B75DDDE08CE044B6851 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				42F0C536A81E9B52CC2DB7EE /* [CP] Copy Pods Resources */,
+				F392B5577DF7CEF4459700C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,24 +263,29 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		106FAFF5BCE46B6284619940 /* [CP] Copy Pods Resources */ = {
+		99B30B75DDDE08CE044B6851 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WeavyReactNative-WeavyReactNativeTests/Pods-WeavyReactNative-WeavyReactNativeTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WeavyReactNative-WeavyReactNativeTests/Pods-WeavyReactNative-WeavyReactNativeTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeavyReactNative-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeavyReactNative-WeavyReactNativeTests/Pods-WeavyReactNative-WeavyReactNativeTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		328733DF8E4E66192AE2EEB7 /* [CP] Check Pods Manifest.lock */ = {
+		C228FD1E2C7950EDE6D1B6A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,7 +307,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		42F0C536A81E9B52CC2DB7EE /* [CP] Copy Pods Resources */ = {
+		C92BC57B9CD9ACCE6508EF45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeavyReactNative-WeavyReactNativeTests/Pods-WeavyReactNative-WeavyReactNativeTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeavyReactNative-WeavyReactNativeTests/Pods-WeavyReactNative-WeavyReactNativeTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeavyReactNative-WeavyReactNativeTests/Pods-WeavyReactNative-WeavyReactNativeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F392B5577DF7CEF4459700C9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -317,28 +339,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeavyReactNative/Pods-WeavyReactNative-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6E90E046BF66BE1BED41C5F0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WeavyReactNative-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -393,7 +393,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F65D0CBF93A26241386DA7B /* Pods-WeavyReactNative-WeavyReactNativeTests.debug.xcconfig */;
+			baseConfigurationReference = A49F1EC4386E478D45D43925 /* Pods-WeavyReactNative-WeavyReactNativeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -420,7 +420,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22C4A0B1E770863E6B30AF7A /* Pods-WeavyReactNative-WeavyReactNativeTests.release.xcconfig */;
+			baseConfigurationReference = BFDB29BBA7EF067552EC6919 /* Pods-WeavyReactNative-WeavyReactNativeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -444,7 +444,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02FFDE17196DC8BDEFF11CFC /* Pods-WeavyReactNative.debug.xcconfig */;
+			baseConfigurationReference = B9A43CF5FCE1CA9242A1D523 /* Pods-WeavyReactNative.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -470,7 +470,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 451A3D15135BAAA905183D05 /* Pods-WeavyReactNative.release.xcconfig */;
+			baseConfigurationReference = 1EF8CD18EB1DD67DDF6F4553 /* Pods-WeavyReactNative.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

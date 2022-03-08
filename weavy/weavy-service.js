@@ -1,8 +1,4 @@
-import {createContext, useContext, useEffect, useState} from 'react';
 import {sign} from 'react-native-pure-jwt';
-import {API_URL} from './weavy-constants';
-import UserContext from './weavy-user-context';
-//import {WEAVY_SECRET, WEAVY_CLIENT_ID} from '@env';
 var axios = require('axios');
 
 const WEAVY_CLIENT_ID = 'clientid';
@@ -49,27 +45,5 @@ async function generateAPIJWT() {
     .then(x => x) // token as the only argument
     .catch(console.error); // possible errors
 }
-
-// // logs the user in with a JWT token
-// async function weavyAuth(sub, email, name, photoURL) {
-//   var token = await generateJWT(sub, email, name, photoURL);
-//   if (!token) {
-//     return;
-//   }
-//   fetch(API_URL + '/client/sign-in', {
-//     method: 'GET',
-//     credentials: 'include',
-//     headers: {
-//       Accept: 'application/json',
-//       Authorization: 'Bearer ' + token,
-//     },
-//   })
-//     .then(res => res.json())
-//     .then(weavyUser => {
-//       // connect();
-//       weavyLogin(weavyUser);
-//     })
-//     .catch(console.error); // possible errors;
-// }
 
 export {generateAPIJWT, generateJWT};

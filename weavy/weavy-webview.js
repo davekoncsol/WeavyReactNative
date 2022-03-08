@@ -2,17 +2,16 @@ import React, {Component} from 'react';
 import {WebView} from 'react-native-webview';
 import {API_URL} from './weavy-constants';
 
-class WeavyWebView extends Component {
-  render() {
-    return (
-      <>
-        <WebView
-          source={{uri: API_URL + this.props.path}}
-          sharedCookiesEnabled={true}
-        />
-      </>
-    );
-  }
-}
+const WeavyWebView = props => {
+  return (
+    <>
+      <WebView
+        source={{uri: API_URL + props.path}}
+        sharedCookiesEnabled={true}
+        weavyUser={props.weavyUser}
+      />
+    </>
+  );
+};
 
 export default WeavyWebView;

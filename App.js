@@ -10,10 +10,6 @@ import {API_URL} from './weavy/weavy-constants';
 import ConnectionProvider from './weavy/weavy-connection-provider';
 
 const App = () => {
-  const backgroundStyle = {
-    flex: 1,
-  };
-
   const {weavyLogin, weavyUser} = useContext(UserContext);
 
   async function weavyAuth(sub, email, name, photoURL) {
@@ -38,23 +34,23 @@ const App = () => {
   }
 
   const loginWeavy = () => {
-    weavyAuth('sub1', 'dave1@email.com', 'Dave Weavy', null);
+    weavyAuth('sub1', 'dave1@email.com', 'Dave Weavy 1', null);
   };
 
   return (
     <UserProvider>
       <ConnectionProvider>
-      <SafeAreaView style={backgroundStyle}>
-        <Button
-          onPress={loginWeavy}
-          title="Login"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-        <View style={styles.weavy}>
-          <WeavyWebView path={'/e/messenger'} />
-        </View>
-      </SafeAreaView>
+        <SafeAreaView style={styles.backgroundStyle}>
+          <Button
+            onPress={loginWeavy}
+            title="Login"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+          />
+          <View style={styles.weavy}>
+            <WeavyWebView path={'/e/messenger'} weavyUser={weavyUser} />
+          </View>
+        </SafeAreaView>
       </ConnectionProvider>
     </UserProvider>
   );
@@ -62,6 +58,9 @@ const App = () => {
 
 const styles = StyleSheet.create({
   weavy: {
+    flex: 1,
+  },
+  backgroundStyle: {
     flex: 1,
   },
 });
