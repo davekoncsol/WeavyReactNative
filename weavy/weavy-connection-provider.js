@@ -1,6 +1,6 @@
 import React from 'react';
 import ConnectionContext from './weavy-connection-context';
-//import {hubConnection} from 'react-native-signalr';
+import {hubConnection} from 'react-native-signalr';
 import {useState} from 'react';
 import {API_URL} from './weavy-constants';
 

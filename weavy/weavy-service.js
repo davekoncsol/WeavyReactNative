@@ -16,13 +16,11 @@ async function generateJWT(sub, email, name, photoURL) {
   return await sign(
     {
       iss: WEAVY_CLIENT_ID,
-     // client_id: WEAVY_CLIENT_ID,
       exp: new Date().getTime() + 120 * 1000, // expiration date, required, in ms, absolute to 1/1/1970
       sub: sub,
       email: email,
       name: name,
       picture: photoURL,
-     // dir: sub,
     }, // body
     WEAVY_SECRET, // secret
     {
