@@ -12,6 +12,9 @@ const ConnectionProvider = props => {
     const hubProxy = connection.createHubProxy('rtm');
     hubProxy.on('init', (type, data) => {}); // dummy event to get signalR started...
     setProxy(hubProxy);
+    hubProxy.on('event', (e, data) => {
+      console.log('data', data);
+    });
 
     if (connection) {
       connection.start();

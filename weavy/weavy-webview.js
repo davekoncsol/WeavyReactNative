@@ -1,8 +1,11 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect, useState, useRef} from 'react';
 import {WebView} from 'react-native-webview';
 import {API_URL} from './weavy-constants';
 
 const WeavyWebView = props => {
+
+ 
+
   return (
     <>
       <WebView
