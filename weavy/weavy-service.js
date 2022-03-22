@@ -4,7 +4,6 @@ var axios = require('axios');
 const WEAVY_CLIENT_ID = 'clientid';
 const WEAVY_SECRET = 'clientsecret';
 
-//const {connect} = useContext(ConnectionContext);
 
 //generates a weavy user jwt token
 async function generateJWT(sub, email, name, photoURL) {
