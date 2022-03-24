@@ -8,12 +8,17 @@ import {generateJWT} from '../weavy/weavy-service';
 import UserContext from '../weavy/weavy-user-context';
 import ConnectionContext from '../weavy/weavy-connection-context';
 import {API_URL} from '../weavy/weavy-constants';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {ChannelListMessenger} from 'stream-chat-react';
 
 const WeavyChat = props => {
   const {weavyLogin, weavyUser} = useContext(UserContext);
   const {connect} = useContext(ConnectionContext);
   const [path, setPath] = useState('/e/messenger');
   const [selectedValue, setSelectedValue] = useState(null);
+
+  const Tab = createBottomTabNavigator();
 
   async function weavyAuth(sub, email, name, photoURL) {
     var token = await generateJWT(sub, email, name, photoURL);
@@ -60,8 +65,16 @@ const WeavyChat = props => {
       : console.log('nouser');
   }
 
-  return (
-    <>
+  function Messenger() {
+    return (
+      <View style={styles.weavy}>
+        <WeavyWebView path={path} />
+      </View>
+    );
+  }
+
+  function LoginScreen() {
+    return (
       <View style={styles.container}>
         <Picker
           selectedValue={selectedValue}
@@ -74,9 +87,20 @@ const WeavyChat = props => {
           <Picker.Item label="Mai" value="mai" />
         </Picker>
       </View>
-      <View style={styles.weavy}>
-        <WeavyWebView path={path} />
-      </View>
+    );
+  }
+
+  return (
+    <>
+      <NavigationContainer>
+        <Tab.Navigator>
+         
+          <Tab.Screen name="Home" component={Messenger} />
+          <Tab.Screen name="Login" component={LoginScreen} />
+
+          {/* <Tab.Screen name="Home" component={WeavyChat} /> */}
+        </Tab.Navigator>
+      </NavigationContainer>
     </>
   );
 };

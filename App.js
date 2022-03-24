@@ -1,18 +1,23 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 
+
 // import Weavy
 
 import UserProvider from './weavy/weavy-user-provider';
 import ConnectionProvider from './weavy/weavy-connection-provider';
 import WeavyChat from './screens/weavy-chat';
 
+
+
 const App = () => {
   return (
     <SafeAreaView style={styles.backgroundStyle}>
       <UserProvider>
         <ConnectionProvider>
-          <WeavyChat />
+  
+<WeavyChat/>
+     
         </ConnectionProvider>
       </UserProvider>
     </SafeAreaView>
