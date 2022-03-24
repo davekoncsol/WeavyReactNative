@@ -5,7 +5,7 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 
 import UserProvider from './weavy/weavy-user-provider';
 import ConnectionProvider from './weavy/weavy-connection-provider';
-import WeavyChat from './weavy/weavy-chat';
+import WeavyChat from './screens/weavy-chat';
 
 const App = () => {
   return (

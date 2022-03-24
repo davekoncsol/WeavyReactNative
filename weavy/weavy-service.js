@@ -1,9 +1,7 @@
 import {sign} from 'react-native-pure-jwt';
-var axios = require('axios');
 
 const WEAVY_CLIENT_ID = 'clientid';
 const WEAVY_SECRET = 'clientsecret';
-
 
 //generates a weavy user jwt token
 async function generateJWT(sub, email, name, photoURL) {

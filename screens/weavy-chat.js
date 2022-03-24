@@ -1,18 +1,18 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {Button, SafeAreaView, StyleSheet, View, Text} from 'react-native';
+import React, {useContext, useState} from 'react';
+import {StyleSheet, View, Text} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
 // import Weavy
-import WeavyWebView from './weavy-webview';
-import {generateJWT} from './weavy-service';
-import UserContext from './weavy-user-context';
-import ConnectionContext from './weavy-connection-context';
-import {API_URL} from './weavy-constants';
+import WeavyWebView from '../weavy/weavy-webview';
+import {generateJWT} from '../weavy/weavy-service';
+import UserContext from '../weavy/weavy-user-context';
+import ConnectionContext from '../weavy/weavy-connection-context';
+import {API_URL} from '../weavy/weavy-constants';
 
 const WeavyChat = props => {
   const {weavyLogin, weavyUser} = useContext(UserContext);
   const {connect} = useContext(ConnectionContext);
-  const [path, setPath] = useState('/');
+  const [path, setPath] = useState('/e/messenger');
   const [selectedValue, setSelectedValue] = useState(null);
 
   async function weavyAuth(sub, email, name, photoURL) {
