@@ -6,14 +6,14 @@ import {API_URL} from './weavy-constants';
 
 const ConnectionProvider = props => {
   const [proxy, setProxy] = useState(null);
+  const [notificationCount, setNotificationCount] = useState(null);
   const connect = () => {
-    console.log('provider');
     const connection = signalr.hubConnection(API_URL);
     connection.logging = true;
     console.log('connection', connection);
     const hubProxy = connection.createHubProxy('rtm');
     hubProxy.on('init', (type, data) => {
-      console.log('init', data);
+     // console.log('init', data);
     }); // dummy event to get signalR started...
     setProxy(hubProxy);
     // atempt connection, and handle errors
@@ -28,8 +28,11 @@ const ConnectionProvider = props => {
         });
 
       hubProxy.on('eventReceived', (type, data) => {
-        console.log('data', data);
-        console.log('type', type);
+        if (type === 'presence-update.weavy') {
+          console.log('user', data);
+          setNotificationCount(data);
+          console.log('type', type);
+        }
       });
       //connection-handling
       connection.connectionSlow(() => {
@@ -62,6 +65,7 @@ const ConnectionProvider = props => {
       value={{
         proxy,
         connect,
+        notificationCount,
       }}>
       {props.children}
     </ConnectionContext.Provider>

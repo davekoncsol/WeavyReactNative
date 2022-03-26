@@ -1,22 +1,22 @@
 import React, {useContext, useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
+import {Icon} from 'react-native-elements';
 
 // import Weavy
-import WeavyWebView from '../weavy/weavy-webview';
+import Messenger from './weavy-messenger';
+import LoginScreen from './weavy-login';
 import {generateJWT} from '../weavy/weavy-service';
 import UserContext from '../weavy/weavy-user-context';
 import ConnectionContext from '../weavy/weavy-connection-context';
 import {API_URL} from '../weavy/weavy-constants';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {ChannelListMessenger} from 'stream-chat-react';
 
 const WeavyChat = props => {
   const {weavyLogin, weavyUser} = useContext(UserContext);
-  const {connect} = useContext(ConnectionContext);
+  const {connect, notificationCount} = useContext(ConnectionContext);
   const [path, setPath] = useState('/e/messenger');
-  const [selectedValue, setSelectedValue] = useState(null);
 
   const Tab = createBottomTabNavigator();
 
@@ -65,40 +65,22 @@ const WeavyChat = props => {
       : console.log('nouser');
   }
 
-  function Messenger() {
-    return (
-      <View style={styles.weavy}>
-        <WeavyWebView path={path} />
-      </View>
-    );
-  }
-
-  function LoginScreen() {
-    return (
-      <View style={styles.container}>
-        <Picker
-          selectedValue={selectedValue}
-          style={styles.picker}
-          onValueChange={(itemValue, itemIndex) => {
-            setSelectedValue(itemValue);
-            loginWeavy(itemValue);
-          }}>
-          <Picker.Item label="Dave" value="dave" />
-          <Picker.Item label="Mai" value="mai" />
-        </Picker>
-      </View>
-    );
-  }
+ 
 
   return (
     <>
       <NavigationContainer>
         <Tab.Navigator>
-         
-          <Tab.Screen name="Home" component={Messenger} />
-          <Tab.Screen name="Login" component={LoginScreen} />
-
-          {/* <Tab.Screen name="Home" component={WeavyChat} /> */}
+          <Tab.Screen
+            name="Home"
+            children={() => <Messenger path={path} />}
+            options={{
+              tabBarBadge: notificationCount
+                ? JSON.parse(notificationCount).user
+                : 0,
+            }}
+          />
+          <Tab.Screen name="Login" children={() => <LoginScreen loginWeavy={loginWeavy} />} />
         </Tab.Navigator>
       </NavigationContainer>
     </>
