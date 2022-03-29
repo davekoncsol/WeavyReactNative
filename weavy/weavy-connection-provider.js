@@ -28,10 +28,9 @@ const ConnectionProvider = props => {
         });
 
       hubProxy.on('eventReceived', (type, data) => {
-        if (type === 'presence-update.weavy') {
+        if (type === 'badge.weavy') {
          // console.log('user', data);
           setNotificationCount(data);
-       //   console.log('type', type);
         }
       });
       //connection-handling

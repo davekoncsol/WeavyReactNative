@@ -59,6 +59,7 @@ const WeavyChat = props => {
     },
   };
   function loginWeavy(user) {
+    console.log(user, 'user');
     user
       ? weavyAuth(users[user].sub, users[user].email, users[user].name, null)
       : console.log('nouser');
@@ -72,7 +73,7 @@ const WeavyChat = props => {
             tabBarIcon: ({focused, color, size}) => {
               let iconName;
 
-              if (route.name === 'Home') {
+              if (route.name === 'Chat') {
                 iconName = focused ? 'chat' : 'chat-bubble';
               } else if (route.name === 'Account') {
                 iconName = focused ? 'login' : 'logout';
@@ -85,11 +86,11 @@ const WeavyChat = props => {
             tabBarInactiveTintColor: 'gray',
           })}>
           <Tab.Screen
-            name="Home"
+            name="Chat"
             children={() => <Messenger path={path} />}
             options={{
               tabBarBadge: notificationCount
-                ? JSON.parse(notificationCount).user
+                ? JSON.parse(notificationCount).conversations
                 : 0,
             }}
           />
