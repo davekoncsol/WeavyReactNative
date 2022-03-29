@@ -1,6 +1,5 @@
 import React, {useContext, useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import {Picker} from '@react-native-picker/picker';
 import {Icon} from 'react-native-elements';
 
 // import Weavy
@@ -65,12 +64,26 @@ const WeavyChat = props => {
       : console.log('nouser');
   }
 
- 
-
   return (
     <>
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator
+          screenOptions={({route}) => ({
+            tabBarIcon: ({focused, color, size}) => {
+              let iconName;
+
+              if (route.name === 'Home') {
+                iconName = focused ? 'chat' : 'chat-bubble';
+              } else if (route.name === 'Account') {
+                iconName = focused ? 'login' : 'logout';
+              }
+              console.log(iconName);
+              // You can return any component that you like here!
+              return <Icon name={iconName} type="material" color={color} />;
+            },
+            tabBarActiveTintColor: '#156B93',
+            tabBarInactiveTintColor: 'gray',
+          })}>
           <Tab.Screen
             name="Home"
             children={() => <Messenger path={path} />}
@@ -80,7 +93,10 @@ const WeavyChat = props => {
                 : 0,
             }}
           />
-          <Tab.Screen name="Login" children={() => <LoginScreen loginWeavy={loginWeavy} />} />
+          <Tab.Screen
+            name="Account"
+            children={() => <LoginScreen loginWeavy={loginWeavy} />}
+          />
         </Tab.Navigator>
       </NavigationContainer>
     </>

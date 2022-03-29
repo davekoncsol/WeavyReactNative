@@ -10,7 +10,7 @@ const ConnectionProvider = props => {
   const connect = () => {
     const connection = signalr.hubConnection(API_URL);
     connection.logging = true;
-    console.log('connection', connection);
+  //  console.log('connection', connection);
     const hubProxy = connection.createHubProxy('rtm');
     hubProxy.on('init', (type, data) => {
      // console.log('init', data);
@@ -21,17 +21,17 @@ const ConnectionProvider = props => {
       connection
         .start()
         .done(() => {
-          console.log('Now connected, connection ID=' + connection.id);
+        //  console.log('Now connected, connection ID=' + connection.id);
         })
         .fail(() => {
-          console.log('Failed');
+        //  console.log('Failed');
         });
 
       hubProxy.on('eventReceived', (type, data) => {
         if (type === 'presence-update.weavy') {
-          console.log('user', data);
+         // console.log('user', data);
           setNotificationCount(data);
-          console.log('type', type);
+       //   console.log('type', type);
         }
       });
       //connection-handling
