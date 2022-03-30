@@ -7,13 +7,14 @@ import {API_URL} from './weavy-constants';
 const ConnectionProvider = props => {
   const [proxy, setProxy] = useState(null);
   const [notificationCount, setNotificationCount] = useState(null);
-  const connect = () => {
+  const connect = token => {
     const connection = signalr.hubConnection(API_URL);
-    connection.logging = true;
-  //  console.log('connection', connection);
+    connection.logging = false;
+    connection.debugging = false;
+    console.log('connection', connection);
     const hubProxy = connection.createHubProxy('rtm');
     hubProxy.on('init', (type, data) => {
-     // console.log('init', data);
+      // console.log('init', data);
     }); // dummy event to get signalR started...
     setProxy(hubProxy);
     // atempt connection, and handle errors
@@ -21,16 +22,37 @@ const ConnectionProvider = props => {
       connection
         .start()
         .done(() => {
-        //  console.log('Now connected, connection ID=' + connection.id);
+          console.log('Now connected, connection ID=' + connection.id);
+          console.log('init', token);
+          // Gets count of the users unread conversations
+          async function getUnreadConversationCount() {
+            await fetch(API_URL + '/api/conversations/unread', {
+              method: 'GET',
+              credentials: 'include',
+              headers: {
+                Accept: 'application/json',
+                Authorization: 'Bearer ' + token,
+              },
+            })
+              .then(res => res.json())
+              .then(count => {
+                console.log(count, 'new count');
+                setNotificationCount(count);
+              })
+              .catch(console.error); // possible errors;
+          }
+          getUnreadConversationCount();
+          // setNotificationCount(count1);
         })
         .fail(() => {
-        //  console.log('Failed');
+          console.log('Failed');
         });
 
       hubProxy.on('eventReceived', (type, data) => {
+        console.log(type, data);
         if (type === 'badge.weavy') {
-         // console.log('user', data);
-          setNotificationCount(data);
+          var count = JSON.parse(data).conversations;
+          setNotificationCount(count);
         }
       });
       //connection-handling

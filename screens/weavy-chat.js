@@ -5,7 +5,7 @@ import {Icon} from 'react-native-elements';
 // import Weavy
 import Messenger from './weavy-messenger';
 import LoginScreen from './weavy-login';
-import {generateJWT} from '../weavy/weavy-service';
+import {generateJWT, getUnreadConversationCount} from '../weavy/weavy-service';
 import UserContext from '../weavy/weavy-user-context';
 import ConnectionContext from '../weavy/weavy-connection-context';
 import {API_URL} from '../weavy/weavy-constants';
@@ -34,7 +34,7 @@ const WeavyChat = props => {
     })
       .then(res => res.json())
       .then(user => {
-        connect();
+        connect(token);
         weavyLogin(user);
         setPath('/e/messenger?' + user.id);
         console.log(path, 'path');
@@ -89,8 +89,8 @@ const WeavyChat = props => {
             name="Chat"
             children={() => <Messenger path={path} />}
             options={{
-              tabBarBadge: notificationCount
-                ? JSON.parse(notificationCount).conversations
+              tabBarBadge: notificationCount !== null
+                ? notificationCount
                 : 0,
             }}
           />
