@@ -23,7 +23,6 @@ const ConnectionProvider = props => {
         .start()
         .done(() => {
           console.log('Now connected, connection ID=' + connection.id);
-          console.log('init', token);
           // Gets count of the users unread conversations
           async function getUnreadConversationCount() {
             await fetch(API_URL + '/api/conversations/unread', {
