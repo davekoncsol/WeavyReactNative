@@ -1,33 +1,23 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-
+import {SafeAreaView} from 'react-native';
 
 // import Weavy
 
+import styles from './weavy/weavy-styles';
 import UserProvider from './weavy/weavy-user-provider';
 import ConnectionProvider from './weavy/weavy-connection-provider';
-import WeavyChat from './screens/weavy-chat';
-
-
+import WeavyNav from './navigation/weavy-nav';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.backgroundStyle}>
       <UserProvider>
         <ConnectionProvider>
-  
-<WeavyChat/>
-     
+          <WeavyNav />
         </ConnectionProvider>
       </UserProvider>
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  backgroundStyle: {
-    flex: 1,
-  },
-});
 
 export default App;

@@ -1,5 +1,4 @@
 import {sign} from 'react-native-pure-jwt';
-import {API_URL} from './weavy-constants';
 
 //const axios = require('axios');
 const WEAVY_CLIENT_ID = 'clientid';
@@ -44,7 +43,5 @@ async function generateAPIJWT() {
     .then(x => x) // token as the only argument
     .catch(console.error); // possible errors
 }
-
-
 
 export {generateAPIJWT, generateJWT};

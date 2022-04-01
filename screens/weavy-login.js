@@ -1,10 +1,10 @@
-import React, {useContext, useState} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import React, {useState} from 'react';
+import {View} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
-import {Icon} from 'react-native-elements';
+import styles from '../weavy/weavy-styles';
 
 const LoginScreen = props => {
- const [selectedValue, setSelectedValue] = useState(null);
+  const [selectedValue, setSelectedValue] = useState('dave');
 
   return (
     <View style={styles.container}>
@@ -17,29 +17,10 @@ const LoginScreen = props => {
         }}>
         <Picker.Item label="Dave" value="dave" />
         <Picker.Item label="Mai" value="mai" />
+        <Picker.Item label="Allen" value="allen" />
       </Picker>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-    weavy: {
-      flex: 5,
-    },
-    button: {
-      flex: 1,
-    },
-    picker: {
-      flex: 1,
-    },
-    backgroundStyle: {
-      flex: 1,
-    },
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      flexDirection: 'row',
-    },
-  });
 
 export default LoginScreen;

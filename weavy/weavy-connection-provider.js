@@ -35,7 +35,6 @@ const ConnectionProvider = props => {
             })
               .then(res => res.json())
               .then(count => {
-                console.log(count, 'new count');
                 setNotificationCount(count);
               })
               .catch(console.error); // possible errors;
@@ -48,7 +47,6 @@ const ConnectionProvider = props => {
         });
 
       hubProxy.on('eventReceived', (type, data) => {
-        console.log(type, data);
         if (type === 'badge.weavy') {
           var count = JSON.parse(data).conversations;
           setNotificationCount(count);
