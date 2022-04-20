@@ -14,7 +14,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 const WeavyNav = props => {
   const {weavyLogin, weavyUser} = useContext(UserContext);
   const {connect, notificationCount} = useContext(ConnectionContext);
-  const [path, setPath] = useState('/e/messenger');
+  const [path, setPath] = useState('/dropin/messenger/8');
 
   const Tab = createBottomTabNavigator();
 
@@ -23,19 +23,25 @@ const WeavyNav = props => {
     if (!token) {
       return;
     }
-    fetch(API_URL + '/client/sign-in', {
-      method: 'GET',
+    fetch(API_URL + '/dropin/client/login', {
+      method: 'POST',
       credentials: 'include',
       headers: {
         Accept: 'application/json',
         Authorization: 'Bearer ' + token,
       },
     })
-      .then(res => res.json())
+      .then(res => {
+       // console.log(res);
+        return res.json();
+      })
+
       .then(user => {
-        connect(token);
         weavyLogin(user);
-        setPath('/e/messenger?' + user.id);
+        setPath('/dropin/messenger/17?' + user.id);
+        //connect(token);
+       // console.log(path, 'path');
+      //  console.log(token);
       })
       .catch(console.error); // possible errors;
   }

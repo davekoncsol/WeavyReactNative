@@ -8,11 +8,12 @@ const ConnectionProvider = props => {
   const [proxy, setProxy] = useState(null);
   const [notificationCount, setNotificationCount] = useState(null);
   const connect = token => {
-    const connection = signalr.hubConnection(API_URL);
-    connection.logging = false;
-    connection.debugging = false;
+    const connection = signalr.hubConnection(API_URL + '/hubs/rtm');
+    connection.url = API_URL + '/hubs/rtm';
+    connection.logging = true;
+    connection.debugging = true;
     console.log('connection', connection);
-    const hubProxy = connection.createHubProxy('rtm');
+    const hubProxy = connection.createHubProxy('17:badge');
     hubProxy.on('init', (type, data) => {
       // console.log('init', data);
     }); // dummy event to get signalR started...
@@ -39,7 +40,7 @@ const ConnectionProvider = props => {
               })
               .catch(console.error); // possible errors;
           }
-          getUnreadConversationCount();
+          // getUnreadConversationCount();
           // setNotificationCount(count1);
         })
         .fail(() => {
