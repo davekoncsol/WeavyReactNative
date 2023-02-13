@@ -1,8 +1,8 @@
 import {sign} from 'react-native-pure-jwt';
 
 //const axios = require('axios');
-const WEAVY_CLIENT_ID = 'production';
-const WEAVY_SECRET = 'production123secret';
+const WEAVY_CLIENT_ID = 'clientid';
+const WEAVY_SECRET = 'clientsecret';
 
 //generates a weavy user jwt token
 async function generateJWT(sub, email, name, photoURL) {
@@ -13,8 +13,8 @@ async function generateJWT(sub, email, name, photoURL) {
       exp: new Date().getTime() + 120 * 1000, // expiration date, required, in ms, absolute to 1/1/1970
       sub: sub,
       email: email,
-      name: name,
       picture: photoURL,
+      dir: 'Sandbox',
     }, // body
     WEAVY_SECRET, // secret
     {

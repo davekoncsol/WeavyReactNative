@@ -38,17 +38,17 @@ const WeavyNav = props => {
 
       .then(user => {
         weavyLogin(user);
-        setPath('/dropin/messenger/17?' + user.id);
-        //connect(token);
-       // console.log(path, 'path');
-      //  console.log(token);
+        setPath('/dropin/messenger/?' + user.id);
+        connect(token);
+        console.log(path, 'path');
+        console.log(token);
       })
       .catch(console.error); // possible errors;
   }
   var users = {
     dave: {
-      sub: 'dave',
-      email: 'daveweavy@email.com',
+      sub: '471',
+      email: 'dave@weavy.com',
       name: 'Dave Weavy',
     },
     mai: {
@@ -64,7 +64,7 @@ const WeavyNav = props => {
   };
   function loginWeavy(user) {
     user
-      ? weavyAuth(users[user].sub, users[user].email, users[user].name, null)
+      ? weavyAuth(users[user].sub, users[user].email, null, null)
       : console.log('nouser');
   }
 
