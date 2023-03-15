@@ -1,72 +1,55 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {Icon} from 'react-native-elements';
 
 // import Weavy
 import Chat from '../screens/weavy-chat';
 import LoginScreen from '../screens/weavy-login';
-import {generateJWT} from '../weavy/weavy-service';
+import {weavyAuth} from '../weavy/weavy-service';
 import UserContext from '../weavy/weavy-user-context';
 import ConnectionContext from '../weavy/weavy-connection-context';
-import {API_URL} from '../weavy/weavy-constants';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const WeavyNav = props => {
-  const {weavyLogin, weavyUser} = useContext(UserContext);
   const {connect, notificationCount} = useContext(ConnectionContext);
   const [path, setPath] = useState('/dropin/messenger/8');
+  const [user, setUser] = useState(null);
+  const {weavyLogin} = useContext(UserContext);
 
   const Tab = createBottomTabNavigator();
-
-  async function weavyAuth(sub, email, name, photoURL) {
-    var token = await generateJWT(sub, email, name, photoURL);
-    if (!token) {
-      return;
-    }
-    fetch(API_URL + '/dropin/client/login', {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        Accept: 'application/json',
-        Authorization: 'Bearer ' + token,
-      },
-    })
-      .then(res => {
-       // console.log(res);
-        return res.json();
-      })
-
-      .then(user => {
-        weavyLogin(user);
-        setPath('/dropin/messenger/?' + user.id);
-        connect(token);
-        console.log(path, 'path');
-        console.log(token);
-      })
-      .catch(console.error); // possible errors;
-  }
   var users = {
     dave: {
-      sub: '471',
+      uid: 'dave',
       email: 'dave@weavy.com',
       name: 'Dave Weavy',
     },
     mai: {
-      sub: 'mai',
+      uid: 'mai',
       email: 'maiweavy@email.com',
       name: 'Mai Weavy',
     },
     allen: {
-      sub: 'allen',
+      uid: 'allen',
       email: 'allenweavy@email.com',
       name: 'Allen Weavy',
     },
   };
-  function loginWeavy(user) {
-    user
-      ? weavyAuth(users[user].sub, users[user].email, null, null)
-      : console.log('nouser');
+  function loginWeavy(user1) {
+    setUser(user1);
   }
+  useEffect(() => {
+    if (user !== null) {
+      weavyAuth(users[user].uid, users[user].email, null, null)
+        .then(userW => {
+          weavyLogin(userW);
+          setPath('/dropin/messenger/?' + userW.id);
+          connect(userW.accessToken);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }, [user]);
 
   return (
     <>

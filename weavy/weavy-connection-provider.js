@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import ConnectionContext from './weavy-connection-context';
-import signalr from 'react-native-signalr';
 import {HubConnectionBuilder, LogLevel} from '@microsoft/signalr';
 import {useState} from 'react';
 import {API_URL} from './weavy-constants';
@@ -22,9 +21,9 @@ const ConnectionProvider = props => {
       .build();
 
     this.isConnectionStarted = connection.start();
-      //console.log(connection, "super");
-      connection.invoke('AddToGroup', 'Typing');
-      connection.on('Typing', function(e, data){console.log('wower',e, data);});
+      console.log(connection, 'super');
+     // connection.invoke('AddToGroup', 'Typing');
+     // connection.on('Typing', function(e, data){console.log('wower',e, data);});
     connection.onclose(error =>
       console.log(this.EVENT_CLOSE, error),
     );

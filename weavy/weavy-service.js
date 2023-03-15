@@ -1,47 +1,54 @@
-import {sign} from 'react-native-pure-jwt';
+import {API_URL} from './weavy-constants';
 
-//const axios = require('axios');
-const WEAVY_CLIENT_ID = 'clientid';
-const WEAVY_SECRET = 'clientsecret';
+async function getUserAccessToken(uid, email, name, photoURL) {
+  var user = uid;
 
-//generates a weavy user jwt token
-async function generateJWT(sub, email, name, photoURL) {
-  // Weavy
-  return await sign(
-    {
-      iss: WEAVY_CLIENT_ID,
-      exp: new Date().getTime() + 120 * 1000, // expiration date, required, in ms, absolute to 1/1/1970
-      sub: sub,
-      email: email,
-      picture: photoURL,
-      dir: 'Sandbox',
-    }, // body
-    WEAVY_SECRET, // secret
-    {
-      alg: 'HS256',
-    },
-  )
-    .then(x => x) // token as the only argument
-    .catch(console.error); // possible errors
+  // Weavy API Key
+  var apiKey = 'wys_XQ1H9Q9K4jLnwOBXCcOF6R1tsH3g5b3I0NN1';
+  // This should be placed in the backend
+  var myHeaders = new Headers();
+  myHeaders.append('Content-Type', 'application/json');
+  myHeaders.append('Authorization', `Bearer ${apiKey}`);
+
+  var raw = JSON.stringify({
+    directory: 'newdirectory',
+    name: name,
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow',
+  };
+
+  return await fetch(`${API_URL}/api/users/${user}/tokens`, requestOptions)
+    .then(response => response.json())
+    .catch(error => console.error(error))
+    .then(result => result.access_token)
+    .catch(error => {
+      console.error(error);
+    });
 }
 
-//generates a master weavy jwt token
-async function generateAPIJWT() {
-  // Weavy
-  return await sign(
-    {
-      iss: 'weavy',
-      client_id: WEAVY_CLIENT_ID,
-      exp: new Date().getTime() + 120 * 1000,
-      sub: WEAVY_CLIENT_ID,
-    }, // body
-    WEAVY_SECRET, // secret
-    {
-      alg: 'HS256',
+async function weavyAuth(sub, email, name, photoURL) {
+  var accessToken = await getUserAccessToken(sub, email, name, photoURL);
+  if (!accessToken) {
+    return;
+  }
+  return await fetch(API_URL + '/dropin/client/login', {
+    method: 'POST',
+    credentials: 'include',
+    headers: {
+      Accept: 'application/json',
+      Authorization: 'Bearer ' + accessToken,
     },
-  )
-    .then(x => x) // token as the only argument
-    .catch(console.error); // possible errors
+  })
+    .then(res => {
+      // console.log(res);
+      return res.json();
+    })
+    .catch(error => console.error(error));
 }
 
-export {generateAPIJWT, generateJWT};
+export {getUserAccessToken, weavyAuth};
