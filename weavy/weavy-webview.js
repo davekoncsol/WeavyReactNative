@@ -4,7 +4,9 @@ import {API_URL} from './weavy-constants';
 
 const WeavyWebView = props => {
   return (
+ 
     <WebView source={{uri: API_URL + props.path}} sharedCookiesEnabled={true} />
+ 
   );
 };
 
