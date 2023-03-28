@@ -58,7 +58,6 @@ const WeavyNav = props => {
           screenOptions={({route}) => ({
             tabBarIcon: ({focused, color, size}) => {
               let iconName;
-
               if (route.name === 'Chat') {
                 iconName = focused ? 'chat' : 'chat-bubble';
               } else if (route.name === 'Account') {

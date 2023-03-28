@@ -3,9 +3,8 @@ import {API_URL} from './weavy-constants';
 async function getUserAccessToken(uid, email, name, photoURL) {
   var user = uid;
 
-  // Weavy API Key
+  // Weavy API Key - This should be a funtion on your backend
   var apiKey = 'wys_XQ1H9Q9K4jLnwOBXCcOF6R1tsH3g5b3I0NN1';
-  // This should be placed in the backend
   var myHeaders = new Headers();
   myHeaders.append('Content-Type', 'application/json');
   myHeaders.append('Authorization', `Bearer ${apiKey}`);
@@ -24,7 +23,6 @@ async function getUserAccessToken(uid, email, name, photoURL) {
 
   return await fetch(`${API_URL}/api/users/${user}/tokens`, requestOptions)
     .then(response => response.json())
-    .catch(error => console.error(error))
     .then(result => result.access_token)
     .catch(error => {
       console.error(error);

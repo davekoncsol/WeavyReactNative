@@ -21,9 +21,6 @@ const ConnectionProvider = props => {
       .build();
 
     this.isConnectionStarted = connection.start();
-      console.log(connection, 'super');
-     // connection.invoke('AddToGroup', 'Typing');
-     // connection.on('Typing', function(e, data){console.log('wower',e, data);});
     connection.onclose(error =>
       console.log(this.EVENT_CLOSE, error),
     );
